@@ -5,7 +5,7 @@
 Создаем docker сеть в рамках которой будут доступны контейнеры с Grafana и proxy.  
 `docker network create --driver=bridge --subnet=192.168.0.0/16 gnet`
 #### Grafana
-Поднимаем контейнер с Grafana, включенным режимом авторизации посредствам заголовка.  
+Поднимаем контейнер Grafana, c включенным режимом авторизации посредствам заголовка.  
 `docker run -d --name=grafana --network=gnet -e "GF_AUTH_PROXY_ENABLED=true" -e "GF_AUTH_PROXY_HEADER_NAME=X-GRAFANA-AUTH" grafana/grafana`
 #### Репозиторий
 Клонируем репозиторий  
